@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabaseBrowser } from '@/lib/supabase-browser';
+import { supabase } from "@/lib/supabase-client";
 import { Project, createProject, updateProject } from '@/lib/projects';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabaseBrowser } from "@/lib/supabase-browser";
+import { supabase } from "@/lib/supabase-client";
 
 export default function AdminHomePage() {
   const router = useRouter();
@@ -11,8 +11,8 @@ export default function AdminHomePage() {
 
   useEffect(() => {
     const check = async () => {
-      const { data } = await supabaseBrowser.auth.getUser();
-      if (!data.user) {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
         router.replace("/admin/login");
       } else {
         setChecking(false);

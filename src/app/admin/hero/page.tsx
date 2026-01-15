@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabaseBrowser } from "@/lib/supabase-browser";
+import { supabase } from "@/lib/supabase-client";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,13 +24,13 @@ export default function AdminHeroPage() {
 
   useEffect(() => {
     const init = async () => {
-      const { data: auth } = await supabaseBrowser.auth.getUser();
-      if (!auth.user) {
+      const user = await supabase.auth.getUser();
+      if (!user) {
         router.replace("/admin/login");
         return;
       }
 
-      const { data, error } = await supabaseBrowser
+      const { data, error } = await supabase
         .from("hero_sections")
         .select("*")
         .order("created_at", { ascending: false })

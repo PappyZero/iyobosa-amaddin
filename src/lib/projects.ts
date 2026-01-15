@@ -14,17 +14,22 @@ export type Project = {
 };
 
 export async function getProjects(): Promise<Project[]> {
-  const { data, error } = await supabase
-    .from('projects')
-    .select('*')
-    .order('sort_order', { ascending: true });
+  try {
+    const { data, error } = await supabase
+      .from('projects')
+      .select('*')
+      .order('sort_order', { ascending: true });
 
-  if (error) {
-    console.error('Error fetching projects:', error);
+    if (error) {
+      console.error('Error fetching projects:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (error) {
+    console.error('Unexpected error fetching projects:', error);
     return [];
   }
-
-  return data || [];
 }
 
 export async function getProjectById(id: string): Promise<Project | null> {

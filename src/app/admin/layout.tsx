@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { supabaseBrowser } from "@/lib/supabase-browser";
+import { supabase } from "@/lib/supabase-client";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -23,7 +23,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   const handleLogout = async () => {
-    await supabaseBrowser.auth.signOut();
+    await supabase.auth.signOut();
     router.push("/");
   };
 

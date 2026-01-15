@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabaseBrowser } from '@/lib/supabase-browser';
+import { supabase } from "@/lib/supabase-client";
 import { getProjects, deleteProject, Project } from '@/lib/projects';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,7 +17,7 @@ export default function ProjectsAdminPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
   const { toast } = useToast();
-  const supabase = supabaseBrowser;
+  const user = supabase.auth.getUser();
 
   useEffect(() => {
     fetchProjects();
