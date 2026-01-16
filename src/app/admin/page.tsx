@@ -47,6 +47,12 @@ export default function AdminHomePage() {
           <Link href="/admin/blog">Edit Blog</Link>
         </li>
         <li>
+          <Link href="/admin/awards">Edit Awards & Achievements</Link>
+        </li>
+        <li>
+          <Link href="/admin/licences">Edit Licences & Certifications</Link>
+        </li>
+        <li>
           <Link href="/admin/social">Edit Social Links</Link>
         </li>
         <li>
