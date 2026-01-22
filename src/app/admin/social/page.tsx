@@ -83,11 +83,14 @@ export default function AdminSocialPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Social Media Links</h2>
-          <p className="text-muted-foreground">
-            Manage your social media profiles and links.
-          </p>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h2 className="text-2xl font-bold">Social Media Links</h2>
+            <p className="text-muted-foreground mt-1">Manage your social media profiles and links</p>
+          </div>
         </div>
         <Link href="/admin/social/new">
           <Button>Add Social Link</Button>

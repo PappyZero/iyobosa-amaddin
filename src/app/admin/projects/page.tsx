@@ -84,8 +84,16 @@ export default function ProjectsAdminPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Projects</h1>
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h1 className="text-3xl font-bold">Projects</h1>
+            <p className="text-muted-foreground mt-1">Showcase your portfolio projects</p>
+          </div>
+        </div>
         <Button onClick={() => router.push('/admin/projects/new')}>
           <Plus className="mr-2 h-4 w-4" />
           Add Project

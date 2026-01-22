@@ -90,9 +90,14 @@ export default function AdminExperiencePage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Experience Management</h2>
-          <p className="text-muted-foreground">Manage your work experience and education.</p>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h2 className="text-2xl font-bold">Experience Management</h2>
+            <p className="text-muted-foreground mt-1">Manage your work experience and education</p>
+          </div>
         </div>
         <div className="flex gap-2">
           <Button asChild>

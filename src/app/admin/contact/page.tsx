@@ -83,11 +83,14 @@ export default function AdminContactPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Contact Messages</h2>
-          <p className="text-muted-foreground">
-            Manage messages from your contact form.
-          </p>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h2 className="text-2xl font-bold">Contact Messages</h2>
+            <p className="text-muted-foreground mt-1">Manage messages from your contact form</p>
+          </div>
         </div>
       </div>
 

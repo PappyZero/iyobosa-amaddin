@@ -83,9 +83,14 @@ export default function AdminBlogPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Blog Management</h2>
-          <p className="text-muted-foreground">Manage your blog posts.</p>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h2 className="text-2xl font-bold">Blog Management</h2>
+            <p className="text-muted-foreground mt-1">Manage your blog posts</p>
+          </div>
         </div>
         <Button asChild>
           <Link href="/admin/blog/new">

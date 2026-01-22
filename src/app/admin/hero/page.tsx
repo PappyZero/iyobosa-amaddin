@@ -105,7 +105,19 @@ export default function AdminHeroPage() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
-      <h2 className="text-2xl font-bold">Edit Hero Section</h2>
+      <div className="flex items-center gap-4 mb-6">
+        <Button 
+          type="button" 
+          variant="outline" 
+          onClick={() => router.push('/admin')}
+        >
+          ← Back to Dashboard
+        </Button>
+        <div>
+          <h2 className="text-2xl font-bold">Edit Hero Section</h2>
+          <p className="text-muted-foreground mt-1">Update your hero section content</p>
+        </div>
+      </div>
       {error && <p className="text-sm text-destructive">{error}</p>}
       <div>
         <label className="block text-sm font-medium mb-1">Title</label>

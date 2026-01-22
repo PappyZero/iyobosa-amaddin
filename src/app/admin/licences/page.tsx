@@ -78,8 +78,16 @@ export default function LicencesAdminPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Licences & Certifications</h1>
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h1 className="text-3xl font-bold">Licences & Certifications</h1>
+            <p className="text-muted-foreground mt-1">Add and manage your professional licenses</p>
+          </div>
+        </div>
         <Button onClick={() => router.push('/admin/licences/new')}>
           <Plus className="mr-2 h-4 w-4" />
           New Licence

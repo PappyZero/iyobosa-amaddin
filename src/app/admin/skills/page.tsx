@@ -77,9 +77,14 @@ export default function AdminSkillsPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Skills Management</h2>
-          <p className="text-muted-foreground">Manage your skill categories and individual skills.</p>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h2 className="text-2xl font-bold">Skills Management</h2>
+            <p className="text-muted-foreground mt-1">Manage your skill categories and individual skills</p>
+          </div>
         </div>
         <Button asChild>
           <Link href="/admin/skills/category/new">

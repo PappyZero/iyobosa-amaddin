@@ -78,8 +78,16 @@ export default function AwardsAdminPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Awards & Achievements</h1>
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <div>
+            <h1 className="text-3xl font-bold">Awards & Achievements</h1>
+            <p className="text-muted-foreground mt-1">Manage your awards and achievements</p>
+          </div>
+        </div>
         <Button onClick={() => router.push('/admin/awards/new')}>
           <Plus className="mr-2 h-4 w-4" />
           New Award

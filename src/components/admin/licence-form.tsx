@@ -159,9 +159,14 @@ export default function LicenceForm({ licence }: LicenceFormProps) {
   return (
     <div className="container mx-auto py-8 max-w-2xl">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">
-          {licence?.id ? 'Edit Licence' : 'New Licence'}
-        </h1>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" onClick={() => router.push('/admin')}>
+            ← Back to Dashboard
+          </Button>
+          <h1 className="text-3xl font-bold">
+            {licence?.id ? 'Edit Licence' : 'New Licence'}
+          </h1>
+        </div>
         <Button variant="outline" onClick={() => router.push('/admin/licences')}>
           Cancel
         </Button>
