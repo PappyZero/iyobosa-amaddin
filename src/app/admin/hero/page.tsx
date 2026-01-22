@@ -59,7 +59,7 @@ export default function AdminHeroPage() {
     setSaving(true);
     setError(null);
 
-    const { data: existing } = await supabaseBrowser
+    const { data: existing } = await supabase
       .from("hero_sections")
       .select("id")
       .order("created_at", { ascending: false })
@@ -77,12 +77,12 @@ export default function AdminHeroPage() {
 
     let error;
     if (existing?.id) {
-      ({ error } = await supabaseBrowser
+      ({ error } = await supabase
         .from("hero_sections")
         .update(payload)
         .eq("id", existing.id));
     } else {
-      ({ error } = await supabaseBrowser.from("hero_sections").insert(payload));
+      ({ error } = await supabase.from("hero_sections").insert(payload));
     }
 
     setSaving(false);

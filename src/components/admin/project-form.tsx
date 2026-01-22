@@ -19,7 +19,6 @@ type ProjectFormProps = {
 export default function ProjectForm({ project, onSuccess }: ProjectFormProps) {
   const router = useRouter();
   const { toast } = useToast();
-  const supabase = supabaseBrowser;
   
   const [formData, setFormData] = useState({
     title: project?.title || '',
